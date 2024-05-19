@@ -1,0 +1,1 @@
+<p>make api inventory of goods</p>
