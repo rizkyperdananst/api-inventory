@@ -6,9 +6,9 @@ use App\Http\Controllers\API\Admin\SupplierController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
-
 Route::post('/register', App\Http\Controllers\API\Auth\RegisterController::class)->name('register');
 Route::post('/login', App\Http\Controllers\API\Auth\LoginController::class)->name('login');
+Route::post('/logout', App\Http\Controllers\API\Auth\LogoutController::class)->name('logout');
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -19,3 +19,4 @@ Route::prefix('admin')->middleware('auth:api')->group(function () {
     Route::apiResource('/goods', GoodsController::class);
     Route::apiResource('/supplier', SupplierController::class);
 });
+
